@@ -70,7 +70,8 @@ function ProjectCard({ p, i }) {
             rel="noreferrer"
             aria-label="Live preview"
             data-testid={`project-live-${i}`}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-flame to-flame-light text-white shadow-[0_0_24px_rgba(255,107,0,0.5)]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white shadow-[0_0_24px_rgba(255,107,0,0.5)]"
+            style={{ background: "linear-gradient(135deg, #ff6b00, #ff8533)" }}
           >
             <ArrowUpRight className="h-4 w-4" />
           </a>

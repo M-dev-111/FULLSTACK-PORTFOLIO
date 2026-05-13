@@ -43,9 +43,8 @@ export default function Navbar() {
         initial={{ y: -32, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? "py-3" : "py-5"
-        }`}
+        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"
+          }`}
         data-testid="navbar"
       >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 md:px-10">
@@ -58,7 +57,10 @@ export default function Navbar() {
             className="group flex items-center gap-2"
             data-testid="logo-link"
           >
-            <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-flame to-flame-light shadow-[0_0_20px_rgba(255,107,0,0.45)]">
+            <span
+              className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl shadow-[0_0_20px_rgba(255,107,0,0.45)]"
+              style={{ background: "linear-gradient(135deg, #ff6b00, #ff8533)" }}
+            >
               <span className="font-display text-base font-bold text-ink-950">DN</span>
             </span>
             <span className="font-display text-base font-medium tracking-tight">
@@ -81,17 +83,17 @@ export default function Navbar() {
                         e.preventDefault();
                         handleNavClick(l.href);
                       }}
-                      className={`relative inline-flex rounded-full px-4 py-2 text-sm transition-colors ${
-                        isActive
+                      className={`relative inline-flex rounded-full px-4 py-2 text-sm transition-colors ${isActive
                           ? "text-white"
                           : "text-zinc-400 hover:text-white"
-                      }`}
+                        }`}
                       data-testid={`nav-link-${l.label.toLowerCase()}`}
                     >
                       {isActive && (
                         <motion.span
                           layoutId="nav-pill"
-                          className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-flame to-flame-light shadow-[0_0_24px_rgba(255,107,0,0.45)]"
+                          className="absolute inset-0 -z-10 rounded-full shadow-[0_0_24px_rgba(255,107,0,0.45)]"
+                          style={{ background: "linear-gradient(135deg, #ff6b00, #ff8533)" }}
                           transition={{ type: "spring", stiffness: 350, damping: 30 }}
                         />
                       )}
@@ -114,7 +116,7 @@ export default function Navbar() {
               data-testid="nav-cta-contact"
             >
               <span className="inline-flex h-2 w-2 animate-pulse-glow rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
-              Available for internships
+              Hire Me
             </a>
           </div>
 
@@ -187,7 +189,7 @@ export default function Navbar() {
                 <div className="rounded-2xl glass p-4">
                   <div className="flex items-center gap-2 text-sm text-zinc-300">
                     <span className="inline-flex h-2 w-2 animate-pulse-glow rounded-full bg-emerald-400" />
-                    Available for internships
+                    Hire Me
                   </div>
                 </div>
               </div>

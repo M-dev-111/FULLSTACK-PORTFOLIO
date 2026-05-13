@@ -46,7 +46,8 @@ function ProgressBar({ value }) {
         whileInView={{ width: `${value}%` }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-        className="h-full rounded-full bg-gradient-to-r from-flame to-flame-light shadow-[0_0_18px_rgba(255,107,0,0.55)]"
+        className="h-full rounded-full shadow-[0_0_18px_rgba(255,107,0,0.55)]"
+        style={{ background: "linear-gradient(90deg, #ff6b00, #ff8533)" }}
       />
     </div>
   );
@@ -80,9 +81,15 @@ export default function Skills() {
                 <TiltCard className="group relative h-full">
                   <div className="relative h-full overflow-hidden rounded-[28px] glass p-7 transition-colors duration-500 hover:border-flame/30">
                     {/* Glow on hover */}
-                    <div className="pointer-events-none absolute -inset-px -z-10 rounded-[28px] bg-gradient-to-br from-flame/20 via-transparent to-transparent opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+                    <div
+                      className="pointer-events-none absolute -inset-px -z-10 rounded-[28px] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                      style={{ background: "linear-gradient(135deg, rgba(255,107,0,0.2), transparent)" }}
+                    />
                     <div className="flex items-center justify-between">
-                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-flame/30 to-flame/10 text-flame ring-1 ring-flame/30">
+                      <div
+                        className="inline-flex h-12 w-12 items-center justify-center rounded-2xl text-flame ring-1 ring-flame/30"
+                        style={{ background: "linear-gradient(135deg, rgba(255,107,0,0.3), rgba(255,107,0,0.1))" }}
+                      >
                         <Icon className="h-5 w-5" />
                       </div>
                       <span className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">

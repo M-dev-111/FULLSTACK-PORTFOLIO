@@ -4,7 +4,7 @@ import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
 import AnimatedOrb from "./AnimatedOrb";
 import MagneticButton from "./MagneticButton";
 import { PERSONAL } from "../lib/data";
-import {FaGithub, FaTwitter,FaLinkedin} from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const TECH_BADGES = ["React", "Node.js", "Tailwind", "MongoDB", "Express", "Figma", "TypeScript"];
 
@@ -28,10 +28,10 @@ export default function Hero() {
     <section
       id="home"
       ref={glowRef}
-      className="relative isolate overflow-hidden pb-24 pt-32 md:pb-32 md:pt-40 lg:pt-44"
+      className="relative isolate overflow-hidden pb-20 pt-32 md:pb-28 md:pt-40 lg:pt-44"
       style={{
         backgroundImage:
-          "radial-gradient(600px circle at var(--mx,50%) var(--my,30%), rgba(255,107,0,0.10), transparent 50%)",
+          "radial-gradient(600px circle at var(--mx,50%) var(--my,30%), rgba(255,107,0,0.08), transparent 50%)",
       }}
       data-testid="hero-section"
     >
@@ -39,9 +39,9 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 grid-bg opacity-50 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(255,107,0,0.18),transparent_60%)]" />
 
-      {/* Floating orb behind text — large, centered, soft */}
-      <div className="pointer-events-none absolute left-1/2 top-[58%] -z-10 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 md:h-[680px] md:w-[680px] lg:top-[55%] lg:h-[820px] lg:w-[820px]">
-        <AnimatedOrb className="h-full w-full" />
+      {/* Floating orb — right side, behind text, subtle */}
+      <div className="pointer-events-none absolute right-[5%] top-1/2 -z-10 h-[380px] w-[380px] -translate-y-1/2 md:h-[480px] md:w-[480px] lg:right-[8%] lg:h-[560px] lg:w-[560px]">
+        <AnimatedOrb className="h-full w-full opacity-60" />
       </div>
 
       <div className="relative mx-auto flex max-w-[1280px] flex-col items-center px-6 text-center md:px-10">
@@ -54,7 +54,7 @@ export default function Hero() {
           data-testid="hero-eyebrow"
         >
           <span className="inline-flex h-1.5 w-1.5 animate-pulse-glow rounded-full bg-flame shadow-[0_0_10px_rgba(255,107,0,0.7)]" />
-          Full Stack Intern · Open to Work
+          Full Stack Developer
         </motion.div>
 
         {/* Headline */}
@@ -84,7 +84,8 @@ export default function Hero() {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1, delay: 1, ease: "easeOut" }}
-                className="absolute -bottom-2 left-0 h-[3px] w-full origin-left rounded-full bg-gradient-to-r from-flame via-flame-light to-transparent"
+                className="absolute -bottom-2 left-0 h-[3px] w-full origin-left rounded-full"
+                style={{ background: "linear-gradient(90deg, #ff6b00, #ff8533, transparent)" }}
               />
             </span>
           </motion.span>
@@ -112,7 +113,8 @@ export default function Hero() {
           <MagneticButton
             data-testid="hero-cta-projects"
             onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-flame to-flame-light px-7 py-4 text-sm font-medium text-white shadow-[0_8px_40px_rgba(255,107,0,0.35)] transition-shadow hover:shadow-[0_8px_60px_rgba(255,107,0,0.55)]"
+            className="group inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-medium text-white transition-shadow hover:shadow-[0_8px_60px_rgba(255,107,0,0.55)]"
+            style={{ background: "linear-gradient(135deg, #ff6b00, #ff8533)", boxShadow: "0 8px 40px rgba(255,107,0,0.35)" }}
           >
             View Projects
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -120,7 +122,14 @@ export default function Hero() {
 
           <MagneticButton
             data-testid="hero-cta-resume"
-            onClick={() => window.open(PERSONAL.resumeUrl, "_blank")}
+            onClick={() => {
+              const link = document.createElement('a');
+              link.href = PERSONAL.resumeUrl;
+              link.download = 'Dibyendu_Nayak_Resume.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
             className="group inline-flex items-center gap-2 rounded-full glass px-7 py-4 text-sm text-white transition-colors hover:border-flame/40"
           >
             <Download className="h-4 w-4" />
@@ -146,7 +155,7 @@ export default function Hero() {
           {[
             { Icon: FaGithub, href: PERSONAL.socials.github, label: "GitHub" },
             { Icon: FaLinkedin, href: PERSONAL.socials.linkedin, label: "LinkedIn" },
-            { Icon: FaTwitter, href: PERSONAL.socials.twitter, label: "Twitter" },
+            { Icon: FaInstagram, href: PERSONAL.socials.instagram, label: "Instagram" },
           ].map(({ Icon, href, label }) => (
             <a
               key={label}

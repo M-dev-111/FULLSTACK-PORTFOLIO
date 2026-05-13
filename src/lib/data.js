@@ -1,22 +1,23 @@
-// Portfolio data — replace placeholders later with real content
+// Portfolio data — updated from resume
 export const PERSONAL = {
   name: "Dibyendu Nayak",
-  role: "Full Stack Developer",
-  tagline: "Frontend Developer evolving into Full Stack engineering.",
-  email: "hello@dibyendu.dev",
-  location: "India",
-  resumeUrl: "#",
+  role: "React Frontend Developer",
+  tagline: "Aspiring Full Stack Developer with experience in React, Node, and MongoDB.",
+  email: "dipnayak99@gmail.com",
+  location: "Kolkata, West Bengal",
+  resumeUrl: "/resume.pdf",
+  access_key: "72aee34a-0fbf-40e1-bfaa-756e854b48f3",
   socials: {
-    github: "https://github.com/",
-    linkedin: "https://linkedin.com/in/",
-    twitter: "https://x.com/",
+    github: "https://github.com/MeczBoyOP",
+    linkedin: "https://www.linkedin.com/in/dibyendu-nayak-161301189",
+    instagram: "https://www.instagram.com/delete.zeta?utm_source=qr&igsh=M29wcmtrODRldmll",
   },
 };
 
 export const STATS = [
-  { label: "Years building", value: "2+" },
-  { label: "Projects shipped", value: "12" },
-  { label: "Technologies", value: "10+" },
+  { label: "Years building", value: "1+" },
+  { label: "Projects shipped", value: "2" },
+  { label: "Technologies", value: "15+" },
   { label: "Coffee per week", value: "∞" },
 ];
 
@@ -24,39 +25,39 @@ export const SKILLS = [
   {
     group: "Frontend",
     items: [
-      { name: "React.js", level: 92 },
-      { name: "JavaScript", level: 90 },
-      { name: "Tailwind CSS", level: 95 },
-      { name: "HTML", level: 98 },
-      { name: "CSS", level: 95 },
+      { name: "React.js", level: 90 },
+      { name: "React Native", level: 80 },
+      { name: "JavaScript (ES6+)", level: 85 },
+      { name: "Tailwind CSS", level: 90 },
+      { name: "HTML5 & CSS3", level: 95 },
     ],
   },
   {
     group: "Backend",
     items: [
-      { name: "Node.js", level: 78 },
-      { name: "Express.js", level: 76 },
-      { name: "MongoDB", level: 74 },
-      { name: "REST APIs", level: 82 },
+      { name: "Node.js", level: 75 },
+      { name: "Express.js", level: 75 },
+      { name: "REST API", level: 80 },
+      { name: "MongoDB", level: 70 },
     ],
   },
   {
-    group: "Tools",
+    group: "Tools & Core",
     items: [
-      { name: "Git / GitHub", level: 88 },
-      { name: "Figma", level: 80 },
-      { name: "VS Code", level: 96 },
-      { name: "Postman", level: 84 },
+      { name: "Git & GitHub", level: 85 },
+      { name: "Vite & Expo", level: 80 },
+      { name: "TanStack Query", level: 80 },
+      { name: "JWT Auth", level: 75 },
     ],
   },
 ];
 
 export const PROJECTS = [
   {
-    title: "Aurora Commerce",
+    title: "MCloude",
     summary:
-      "A premium e-commerce storefront with smooth product transitions, animated cart, and Stripe checkout.",
-    tags: ["React", "Tailwind", "Node.js", "MongoDB"],
+      "A full-stack cloud storage application featuring an interactive file explorer, soft-delete (trash) system, and file favoring (Starred). Includes secure sharing and admin dashboard.",
+    tags: ["React 19", "Node.js", "Express", "MongoDB", "Tailwind CSS v4"],
     cover:
       "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600&q=80&auto=format&fit=crop",
     live: "#",
@@ -64,64 +65,30 @@ export const PROJECTS = [
     accent: "from-orange-500/40 via-amber-500/10 to-transparent",
   },
   {
-    title: "Pulse Dashboard",
+    title: "Customer Journey",
     summary:
-      "Realtime analytics dashboard with glassmorphic widgets, animated charts and dark cinematic UI.",
-    tags: ["React", "Recharts", "Express", "MongoDB"],
+      "Projects Management System featuring a multi-role dashboard (Admin / Account Manager) with dynamic permission-based UI rendering and advanced filtering.",
+    tags: ["React 19", "Tailwind CSS v4", "React Query", "Yup"],
     cover:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop",
     live: "#",
     repo: "#",
     accent: "from-rose-500/40 via-orange-500/10 to-transparent",
   },
-  {
-    title: "Nova Portfolio",
-    summary:
-      "Awwwards-style developer portfolio template — Framer Motion micro-interactions and Lenis smooth scroll.",
-    tags: ["React", "Framer Motion", "Tailwind"],
-    cover:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop",
-    live: "#",
-    repo: "#",
-    accent: "from-fuchsia-500/30 via-orange-500/10 to-transparent",
-  },
-  {
-    title: "Stride Tasks",
-    summary:
-      "Minimal productivity app with drag & drop boards, JWT auth and an obsessively crafted micro-UI.",
-    tags: ["React", "Node.js", "MongoDB", "JWT"],
-    cover:
-      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1600&q=80&auto=format&fit=crop",
-    live: "#",
-    repo: "#",
-    accent: "from-cyan-400/30 via-orange-500/10 to-transparent",
-  },
 ];
 
 export const JOURNEY = [
   {
-    year: "2023",
-    title: "Started as UI/UX Designer",
+    year: "2017 - 2021",
+    title: "B.Tech in Mechanical Engineering",
     body:
-      "Designed interfaces in Figma, learned visual hierarchy, color theory, and the language of pixels.",
+      "Studied at Birbhum Institute of Engineering & Technology. Graduated with 8.65 CGPA.",
   },
   {
-    year: "2024",
-    title: "Frontend Developer",
+    year: "2025 - Present",
+    title: "React Frontend Developer at SB Infowaves",
     body:
-      "Translated designs into production React + Tailwind interfaces. Built responsive, accessible UIs.",
-  },
-  {
-    year: "2025",
-    title: "Going Full Stack",
-    body:
-      "Diving into Node, Express, and MongoDB — shipping end-to-end web apps with clean architecture.",
-  },
-  {
-    year: "Now",
-    title: "Open to Internships",
-    body:
-      "Looking for an opportunity to ship real product alongside a strong engineering team.",
+      "Engineered reusable components, integrated REST APIs, implemented JWT auth, and optimized performance.",
   },
 ];
 
@@ -132,19 +99,9 @@ export const SERVICES = [
     icon: "Code2",
   },
   {
-    title: "Responsive Web Design",
-    desc: "Layouts that feel native from 320px to 4K — mobile-first.",
-    icon: "Smartphone",
-  },
-  {
     title: "UI / UX Design",
     desc: "Design systems, prototypes, and interactions in Figma.",
     icon: "Palette",
-  },
-  {
-    title: "API Integration",
-    desc: "REST clients, auth flows, third-party SDKs, error handling.",
-    icon: "Plug",
   },
   {
     title: "MERN Stack Development",

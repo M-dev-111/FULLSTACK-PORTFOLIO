@@ -19,7 +19,8 @@ export default function Experience() {
         <div className="relative mt-16">
           {/* Vertical line */}
           <div
-            className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-flame/0 via-flame/40 to-flame/0 md:left-1/2"
+            className="absolute left-5 top-0 bottom-0 w-px md:left-1/2"
+            style={{ background: "linear-gradient(to bottom, transparent, rgba(255,107,0,0.4), transparent)" }}
             aria-hidden
           />
 
@@ -31,7 +32,7 @@ export default function Experience() {
                   {/* Dot */}
                   <div className="absolute left-5 top-6 -translate-x-1/2 md:left-1/2">
                     <span className="relative inline-flex h-4 w-4 items-center justify-center">
-                      <span className="absolute inset-0 rounded-full bg-flame/30 blur-md" />
+                      <span className="absolute inset-0 rounded-full blur-md" style={{ background: "rgba(255,107,0,0.3)" }} />
                       <span className="relative inline-flex h-3 w-3 rounded-full bg-flame shadow-[0_0_16px_rgba(255,107,0,0.7)]" />
                     </span>
                   </div>
@@ -47,7 +48,7 @@ export default function Experience() {
                       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                       className={`${left ? "md:text-right md:pr-12" : "md:order-2 md:pl-12"} ${left ? "" : "md:col-start-2"}`}
                     >
-                      <div className="inline-block rounded-full border border-flame/30 bg-flame/5 px-3 py-1 font-mono text-xs text-flame">
+                      <div className="inline-block rounded-full px-3 py-1 font-mono text-xs text-flame" style={{ border: "1px solid rgba(255,107,0,0.3)", background: "rgba(255,107,0,0.05)" }}>
                         {j.year}
                       </div>
                       <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight">

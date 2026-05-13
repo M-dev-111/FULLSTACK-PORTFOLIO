@@ -1,17 +1,17 @@
 import { ArrowUpRight } from "lucide-react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { NAV_LINKS, PERSONAL } from "../lib/data";
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/5 bg-black pb-10 pt-20" data-testid="footer">
-      <div className="absolute inset-x-0 top-0 -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-flame/40 to-transparent" />
+      <div className="absolute inset-x-0 top-0 -translate-y-1/2 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,107,0,0.4), transparent)" }} />
 
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         {/* Big brand mark */}
         <div className="relative overflow-hidden">
           <h2
-            className="select-none font-display text-[18vw] font-bold leading-[0.85] tracking-tighter text-gradient-white opacity-90 sm:text-[14vw] lg:text-[180px]"
+            className="select-none font-display text-[18vw] font-bold tracking-tighter text-gradient-white opacity-90 sm:text-[14vw] lg:text-[180px]"
             aria-hidden
           >
             Dibyendu<span className="text-flame">.</span>
@@ -21,11 +21,11 @@ export default function Footer() {
         <div className="mt-10 grid grid-cols-1 gap-10 border-t border-white/5 pt-10 md:grid-cols-12">
           <div className="md:col-span-5">
             <p className="max-w-sm text-sm text-zinc-400">
-              Frontend developer evolving into full stack. Available for internships and
+              Frontend developer evolving into full stack. Available for work and
               freelance product work.
             </p>
             <a
-              href={`mailto:${PERSONAL.email}`}
+              href={`mailto:${PERSONAL.email || "dipnayak99@gmail.com"}`}
               className="mt-5 inline-flex items-center gap-2 font-display text-xl tracking-tight text-white hover:text-flame"
               data-testid="footer-email-link"
             >
@@ -44,7 +44,6 @@ export default function Footer() {
                     className="inline-flex items-center gap-1 text-zinc-300 transition-colors hover:text-flame"
                     data-testid={`footer-nav-${l.label.toLowerCase()}`}
                   >
-                    <span className="text-flame">/</span>
                     {l.label}
                   </a>
                 </li>
@@ -58,7 +57,7 @@ export default function Footer() {
               {[
                 { Icon: FaGithub, href: PERSONAL.socials.github, label: "GitHub" },
                 { Icon: FaLinkedin, href: PERSONAL.socials.linkedin, label: "LinkedIn" },
-                { Icon: FaTwitter, href: PERSONAL.socials.twitter, label: "Twitter" },
+                { Icon: FaInstagram, href: PERSONAL.socials.instagram, label: "Instagram" },
               ].map(({ Icon, href, label }) => (
                 <a
                   key={label}

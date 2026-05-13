@@ -53,7 +53,7 @@ export default function AnimatedOrb({ className = "" }) {
         transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
         className="absolute inset-0"
       >
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-2.5 w-2.5 rounded-full bg-flame-light shadow-[0_0_24px_6px_rgba(255,133,51,0.7)]" />
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-2.5 w-2.5 rounded-full shadow-[0_0_24px_6px_rgba(255,133,51,0.7)]" style={{ background: "#ff8533" }} />
       </motion.div>
     </div>
   );

@@ -25,7 +25,7 @@ export default function Services() {
           </div>
         </ScrollReveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => {
             const Icon = ICONS[s.icon] || Code2;
             // bento spans

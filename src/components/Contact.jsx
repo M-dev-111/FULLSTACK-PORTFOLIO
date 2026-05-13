@@ -23,12 +23,20 @@ export default function Contact() {
     }
     setLoading(true);
     try {
-      const { data } = await axios.post(`${API}/contact`, form);
-      toast.success(data.message || "Message sent.");
-      setForm({ name: "", email: "", subject: "", message: "" });
+      const response = await axios.post("https://api.web3forms.com/submit", {
+        ...form,
+        access_key: PERSONAL.access_key,
+        from_name: "Portfolio Contact Form",
+      });
+
+      if (response.data.success) {
+        toast.success("Message sent successfully!");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error(response.data.message || "Submission failed");
+      }
     } catch (err) {
-      const msg = err?.response?.data?.detail || "Something went wrong. Please try again.";
-      toast.error(typeof msg === "string" ? msg : "Submission failed.");
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -59,7 +67,7 @@ export default function Contact() {
             <div className="h-full rounded-[28px] glass p-8">
               <div className="flex items-center gap-2">
                 <span className="inline-flex h-2 w-2 animate-pulse-glow rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
-                <span className="text-sm text-zinc-300">Available for internships</span>
+                <span className="text-sm text-zinc-300">Available for joining</span>
               </div>
               <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight">
                 Reach out directly
@@ -99,7 +107,7 @@ export default function Contact() {
                 </li>
               </ul>
 
-              <div className="mt-8 rounded-2xl border border-flame/20 bg-flame/[0.04] p-4 text-xs text-zinc-300">
+              <div className="mt-8 rounded-2xl p-4 text-xs text-zinc-300" style={{ border: "1px solid rgba(255,107,0,0.2)", background: "rgba(255,107,0,0.04)" }}>
                 <span className="text-flame">Tip</span> · Mention the role / project type and a
                 rough timeline so I can tailor my response.
               </div>
@@ -112,7 +120,10 @@ export default function Contact() {
               className="relative overflow-hidden rounded-[28px] glass p-8"
               data-testid="contact-form"
             >
-              <div className="pointer-events-none absolute -inset-px -z-10 rounded-[28px] bg-gradient-to-br from-flame/20 via-transparent to-transparent opacity-40 blur-3xl" />
+              <div
+                className="pointer-events-none absolute -inset-px -z-10 rounded-[28px] opacity-40 blur-3xl"
+                style={{ background: "linear-gradient(135deg, rgba(255,107,0,0.2), transparent)" }}
+              />
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <Field
                   label="Name"
@@ -137,7 +148,7 @@ export default function Contact() {
                   label="Subject"
                   value={form.subject}
                   onChange={update("subject")}
-                  placeholder="Internship opportunity"
+                  placeholder="Frontend Developer role  "
                   testid="contact-input-subject"
                 />
               </div>
@@ -161,7 +172,8 @@ export default function Contact() {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   disabled={loading}
-                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-flame to-flame-light px-6 py-3 text-sm font-medium text-white shadow-[0_8px_30px_rgba(255,107,0,0.35)] disabled:opacity-70"
+                  className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white disabled:opacity-70"
+                  style={{ background: "linear-gradient(135deg, #ff6b00, #ff8533)", boxShadow: "0 8px 30px rgba(255,107,0,0.35)" }}
                   data-testid="contact-submit-button"
                 >
                   {loading ? (
