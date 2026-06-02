@@ -1,10 +1,12 @@
 // Portfolio data — updated from resume
 export const PERSONAL = {
   name: "Dibyendu Nayak",
-  role: "React Frontend Developer",
-  tagline: "Aspiring Full Stack Developer with experience in React, Node, and MongoDB.",
+  role: "Full Stack Software Developer",
+  tagline: "Full Stack Developer building production-grade web apps with React, Node, and MongoDB.",
   email: "dipnayak99@gmail.com",
-  location: "Kolkata, West Bengal",
+  location: "Kolkata, India",
+  availability: "Available across US & India time zones",
+  regions: ["United States 🇺🇸", "India 🇮🇳"],
   resumeUrl: "/resume.pdf",
   access_key: "72aee34a-0fbf-40e1-bfaa-756e854b48f3",
   socials: {
@@ -62,7 +64,7 @@ export const PROJECTS = [
       "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600&q=80&auto=format&fit=crop",
     live: "#",
     repo: "#",
-    accent: "from-orange-500/40 via-amber-500/10 to-transparent",
+    accent: "from-indigo-500/45 via-violet-500/15 to-transparent",
   },
   {
     title: "Customer Journey",
@@ -73,7 +75,7 @@ export const PROJECTS = [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80&auto=format&fit=crop",
     live: "#",
     repo: "#",
-    accent: "from-rose-500/40 via-orange-500/10 to-transparent",
+    accent: "from-violet-500/45 via-fuchsia-500/15 to-transparent",
   },
 ];
 

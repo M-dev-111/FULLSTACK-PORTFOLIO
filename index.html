@@ -1,10 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dibyendu Nayak — Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Dibyendu Nayak — Full Stack Software Developer building fast, production-grade web apps with React and the MERN stack for teams across the US and India."
+    />
+    <meta name="theme-color" content="#08080c" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <title>Dibyendu Nayak — Full Stack Software Developer</title>
+    <!-- Set theme before first paint to avoid flash of wrong theme -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          document.documentElement.setAttribute(
+            "data-theme",
+            t === "light" || t === "dark" ? t : "dark"
+          );
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,60 +1,41 @@
-import { motion, useReducedMotion } from "framer-motion";
-
 /**
- * Animated cinematic orb — built entirely with CSS radial gradients + framer-motion.
- * No external assets required.
+ * Performance-first decorative orb.
+ * Blur is applied ONCE (static) — only transform/opacity animate, so it stays
+ * on the GPU compositor and never triggers per-frame repaints.
  */
 export default function AnimatedOrb({ className = "" }) {
-  const reduce = useReducedMotion();
   return (
     <div className={`pointer-events-none relative ${className}`} aria-hidden>
-      {/* Outer halo */}
-      <motion.div
-        animate={reduce ? {} : { scale: [1, 1.06, 1], opacity: [0.55, 0.85, 0.55] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 rounded-full"
-        style={{
-          background:
-            "radial-gradient(closest-side, rgba(255,107,0,0.55), rgba(255,107,0,0.10) 55%, transparent 75%)",
-          filter: "blur(40px)",
-        }}
-      />
-      {/* Core orb */}
-      <motion.div
-        animate={reduce ? {} : { rotate: 360 }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-[14%] rounded-full"
-        style={{
-          background:
-            "conic-gradient(from 120deg, #ff6b00, #ff8533, #ffb380, #ff6b00 80%)",
-          filter: "blur(2px)",
-          boxShadow:
-            "0 0 80px 10px rgba(255,107,0,0.45), inset 0 0 80px rgba(255,255,255,0.25)",
-        }}
-      />
-      {/* Inner highlight */}
+      {/* Static blurred halo, gentle float */}
       <div
-        className="absolute inset-[26%] rounded-full"
+        className="absolute inset-0 rounded-full animate-float-slow"
         style={{
           background:
-            "radial-gradient(circle at 30% 25%, rgba(255,255,255,0.85), rgba(255,180,128,0.4) 30%, rgba(255,107,0,0.0) 65%)",
+            "radial-gradient(closest-side, var(--accent-glow), rgba(139,92,246,0.12) 55%, transparent 75%)",
+          filter: "blur(36px)",
+          willChange: "transform",
+        }}
+      />
+      {/* Rotating conic core — rotate is compositor-cheap */}
+      <div
+        className="absolute inset-[16%] rounded-full animate-spin-slow"
+        style={{
+          background:
+            "conic-gradient(from 120deg, #6366f1, #8b5cf6, #a855f7, #6366f1 80%)",
+          opacity: 0.9,
+          boxShadow: "0 0 70px 6px rgba(99,102,241,0.4)",
+          willChange: "transform",
+        }}
+      />
+      {/* Inner light (static) */}
+      <div
+        className="absolute inset-[30%] rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle at 32% 28%, rgba(255,255,255,0.85), rgba(168,85,247,0.3) 38%, transparent 68%)",
           mixBlendMode: "screen",
         }}
       />
-      {/* Specular */}
-      <motion.div
-        animate={reduce ? {} : { x: ["-10%", "10%", "-10%"], y: ["10%", "-10%", "10%"] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-[34%] rounded-full bg-white/40 blur-2xl"
-      />
-      {/* Orbiting dot */}
-      <motion.div
-        animate={reduce ? {} : { rotate: 360 }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0"
-      >
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-2.5 w-2.5 rounded-full shadow-[0_0_24px_6px_rgba(255,133,51,0.7)]" style={{ background: "#ff8533" }} />
-      </motion.div>
     </div>
   );
 }

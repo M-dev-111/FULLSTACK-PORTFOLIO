@@ -2,6 +2,6 @@
 
 .App {
   min-height: 100vh;
-  background: #050505;
-  color: #ffffff;
+  background: var(--bg);
+  color: var(--text);
 }
