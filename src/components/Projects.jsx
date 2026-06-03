@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Reveal from "./Reveal";
-import { PROJECTS } from "../lib/data";
+import { useContent } from "../lib/content";
 
 function ProjectCard({ p, i }) {
   const ref = useRef(null);
@@ -107,6 +107,7 @@ function ProjectCard({ p, i }) {
 }
 
 export default function Projects() {
+  const { PROJECTS } = useContent();
   return (
     <section id="projects" className="cv-auto relative py-24 md:py-32" data-testid="projects-section">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,var(--accent-soft),transparent_55%)]" />

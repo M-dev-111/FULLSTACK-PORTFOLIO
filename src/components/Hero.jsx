@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
 import AnimatedOrb from "./AnimatedOrb";
 import MagneticButton from "./MagneticButton";
-import { PERSONAL } from "../lib/data";
+import { useContent } from "../lib/content";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const TECH_BADGES = ["React", "Node.js", "TypeScript", "Tailwind", "MongoDB", "Express", "Next.js", "Figma"];
 
 export default function Hero() {
+  const { PERSONAL } = useContent();
   return (
     <section
       id="home"
@@ -33,7 +34,7 @@ export default function Hero() {
           data-testid="hero-eyebrow"
         >
           <span className="inline-flex h-1.5 w-1.5 animate-pulse-soft rounded-full bg-accent shadow-[0_0_10px_var(--accent-glow)]" />
-          Full Stack Software Developer · 🇺🇸 US &amp; 🇮🇳 India
+          Full Stack Software Developer
         </motion.div>
 
         {/* Headline */}
@@ -78,8 +79,7 @@ export default function Hero() {
           data-testid="hero-subheadline"
         >
           Hi, I'm <span className="text-strong font-medium">{PERSONAL.name}</span> — a full stack developer
-          shipping fast, accessible, production-grade web apps with React and the MERN stack for teams
-          across the US and India.
+          shipping fast, accessible, production-grade web apps with React and the MERN stack for teams.
         </motion.p>
 
         {/* CTAs */}

@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
-import { JOURNEY } from "../lib/data";
+import { useContent } from "../lib/content";
 
 export default function Experience() {
+  const { JOURNEY } = useContent();
   return (
     <section id="journey" className="cv-auto relative py-24 md:py-32" data-testid="experience-section">
       <div className="mx-auto max-w-[1100px] px-6 md:px-10">

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Reveal from "./Reveal";
-import { PERSONAL, STATS } from "../lib/data";
+import { useContent } from "../lib/content";
 
 function Counter({ value }) {
   const ref = useRef(null);
@@ -34,6 +34,7 @@ function Counter({ value }) {
 }
 
 export default function About() {
+  const { PERSONAL, STATS } = useContent();
   return (
     <section id="about" className="cv-auto relative py-24 md:py-32 lg:py-40" data-testid="about-section">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom_left,var(--accent-soft),transparent_55%)]" />

@@ -1,10 +1,11 @@
 import { Code2, Smartphone, Palette, Plug, Layers, ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
-import { SERVICES } from "../lib/data";
+import { useContent } from "../lib/content";
 
 const ICONS = { Code2, Smartphone, Palette, Plug, Layers };
 
 export default function Services() {
+  const { SERVICES } = useContent();
   return (
     <section id="services" className="cv-auto relative py-24 md:py-32" data-testid="services-section">
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">

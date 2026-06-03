@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Code2, Server, Wrench } from "lucide-react";
 import Reveal from "./Reveal";
-import { SKILLS } from "../lib/data";
+import { useContent } from "../lib/content";
 
 const ICONS = [Code2, Server, Wrench];
 
@@ -54,6 +54,7 @@ function ProgressBar({ value }) {
 }
 
 export default function Skills() {
+  const { SKILLS } = useContent();
   return (
     <section id="skills" className="cv-auto relative py-24 md:py-32" data-testid="skills-section">
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">

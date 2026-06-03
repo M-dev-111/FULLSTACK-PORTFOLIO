@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageSquare, X, Send } from "lucide-react";
-import { GREETING, getBotResponse } from "../lib/chatbot";
-import { PERSONAL } from "../lib/data";
+import { buildGreeting, getBotResponse } from "../lib/chatbot";
+import { useContent } from "../lib/content";
 
-function runAction(action) {
+function runAction(action, PERSONAL) {
   if (action === "scroll-contact" || action === "open contact form") {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   } else if (action === "download-resume") {
     const link = document.createElement("a");
     link.href = PERSONAL.resumeUrl;
-    link.download = "Dibyendu_Nayak_Resume.pdf";
+    link.download = `${(PERSONAL.name || "Resume").replace(/\s+/g, "_")}_Resume.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -18,11 +18,14 @@ function runAction(action) {
 }
 
 export default function Chatbot() {
+  const content = useContent();
+  const { PERSONAL } = content;
+  const greeting = buildGreeting(content);
   const [open, setOpen] = useState(false);
   const [typing, setTyping] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
-    { from: "bot", text: GREETING.text, chips: GREETING.chips },
+    { from: "bot", text: greeting.text, chips: greeting.chips },
   ]);
   const scrollRef = useRef(null);
   const inputRef = useRef(null);
@@ -45,7 +48,7 @@ export default function Chatbot() {
     setInput("");
     setTyping(true);
 
-    const reply = getBotResponse(text);
+    const reply = getBotResponse(text, content);
     // also let chip labels that map to actions trigger them
     const lowered = text.toLowerCase();
     if (lowered.includes("download") && lowered.includes("resume")) reply.action = "download-resume";
@@ -53,7 +56,7 @@ export default function Chatbot() {
     timer.current = setTimeout(() => {
       setTyping(false);
       setMessages((m) => [...m, { from: "bot", text: reply.text, chips: reply.chips }]);
-      if (reply.action) setTimeout(() => runAction(reply.action), 400);
+      if (reply.action) setTimeout(() => runAction(reply.action, PERSONAL), 400);
     }, 650);
   };
 

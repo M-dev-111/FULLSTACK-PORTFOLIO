@@ -1,8 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { NAV_LINKS, PERSONAL } from "../lib/data";
+import { useContent } from "../lib/content";
 
 export default function Footer() {
+  const { NAV_LINKS, PERSONAL } = useContent();
   return (
     <footer className="relative border-t border-subtle bg-app-2 pb-10 pt-20" data-testid="footer">
       <div className="absolute inset-x-0 top-0 -translate-y-1/2 h-px" style={{ background: "linear-gradient(90deg, transparent, var(--accent-glow), transparent)" }} />

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { NAV_LINKS } from "../lib/data";
+import { useContent } from "../lib/content";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
+  const { NAV_LINKS } = useContent();
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function Navbar() {
     );
     els.forEach((el) => obs.observe(el));
     return () => obs.disconnect();
-  }, []);
+  }, [NAV_LINKS]);
 
   const handleNavClick = (href) => {
     setOpen(false);
