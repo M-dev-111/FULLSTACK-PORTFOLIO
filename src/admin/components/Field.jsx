@@ -53,6 +53,18 @@ export default function Field({ field, value, onChange }) {
             ))}
           </select>
         );
+      case "number":
+        return (
+          <input
+            type="number"
+            min={f.min}
+            max={f.max}
+            value={value ?? ""}
+            placeholder={f.placeholder || ""}
+            onChange={(e) => onChange(e.target.value === "" ? "" : Number(e.target.value))}
+            className={inputCls}
+          />
+        );
       case "tags":
         return <TagsInput value={value} onChange={onChange} placeholder={f.placeholder} />;
       case "skills":

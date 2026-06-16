@@ -56,6 +56,18 @@ export const RESOURCES = {
         options: ["Code2", "Palette", "Layers", "Smartphone", "Plug", "Server", "Wrench"] },
     ],
   },
+  testimonials: {
+    label: "Testimonials", singular: "Testimonial", icon: "Quote",
+    desc: "Reviews and praise shown in the Testimonials section.",
+    primary: "name", secondary: "quote", thumb: "avatar",
+    fields: [
+      { key: "quote", label: "Quote", type: "textarea", placeholder: "They shipped fast and polished everything…" },
+      { key: "name", label: "Person's name", type: "text", placeholder: "Jane Doe" },
+      { key: "title", label: "Role / company", type: "text", placeholder: "CTO · Acme Inc." },
+      { key: "avatar", label: "Avatar image", type: "image" },
+      { key: "rating", label: "Rating (1–5)", type: "number", min: 1, max: 5, default: 5 },
+    ],
+  },
   navlinks: {
     label: "Nav Links", singular: "Nav link", icon: "Link",
     desc: "Navbar and footer navigation links.",
@@ -91,6 +103,7 @@ export function blankRecord(fields) {
   for (const f of fields) {
     if (f.type === "tags" || f.type === "skills") obj[f.key] = [];
     else if (f.type === "bool") obj[f.key] = f.default ?? false;
+    else if (f.type === "number") obj[f.key] = f.default ?? 0;
     else if (f.type === "group") obj[f.key] = {};
     else obj[f.key] = "";
   }

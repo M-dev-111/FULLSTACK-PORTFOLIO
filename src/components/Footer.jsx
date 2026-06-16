@@ -66,7 +66,7 @@ export default function Footer() {
                   rel="noreferrer"
                   aria-label={label}
                   data-testid={`footer-social-${label.toLowerCase()}`}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full card-2 text-muted transition-colors hover:border-accent hover:text-accent"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full glass text-muted transition-colors hover:text-accent"
                 >
                   <Icon className="h-4 w-4" />
                 </a>

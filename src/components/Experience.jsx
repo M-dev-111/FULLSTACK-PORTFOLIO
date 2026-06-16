@@ -1,20 +1,19 @@
 import { motion } from "framer-motion";
-import Reveal from "./Reveal";
+import { Aurora, SectionHeading } from "./ui";
 import { useContent } from "../lib/content";
 
 export default function Experience() {
   const { JOURNEY } = useContent();
   return (
-    <section id="journey" className="cv-auto relative py-24 md:py-32" data-testid="experience-section">
+    <section id="journey" className="cv-auto relative isolate py-24 md:py-32" data-testid="experience-section">
+      <Aurora className="opacity-40" />
       <div className="mx-auto max-w-[1100px] px-6 md:px-10">
-        <Reveal>
-          <div className="text-center">
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">Journey</p>
-            <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-strong sm:text-5xl lg:text-6xl">
-              From pixels to <span className="text-gradient-accent">production code.</span>
-            </h2>
-          </div>
-        </Reveal>
+        <SectionHeading
+          eyebrow="Journey"
+          title="From pixels to"
+          accent="production code."
+          align="center"
+        />
 
         <div className="relative mt-16">
           <div
@@ -43,18 +42,18 @@ export default function Experience() {
                       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                       className={`${left ? "md:text-right md:pr-12" : "md:order-2 md:pl-12 md:col-start-2"}`}
                     >
-                      <div
-                        className="inline-block rounded-full px-3 py-1 font-mono text-xs text-accent"
-                        style={{ border: "1px solid var(--accent-glow)", background: "var(--accent-soft)" }}
-                      >
-                        {j.year}
+                      <div className={`glass gradient-border rounded-[24px] p-6 ${left ? "md:ml-auto" : ""} md:max-w-sm`}>
+                        <div
+                          className="inline-block rounded-full px-3 py-1 font-mono text-xs text-accent"
+                          style={{ border: "1px solid var(--accent-glow)", background: "var(--accent-soft)" }}
+                        >
+                          {j.year}
+                        </div>
+                        <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight text-strong">
+                          {j.title}
+                        </h3>
+                        <p className="mt-2 text-sm text-muted">{j.body}</p>
                       </div>
-                      <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight text-strong">
-                        {j.title}
-                      </h3>
-                      <p className="mt-2 max-w-md text-sm text-muted md:ml-auto md:max-w-sm">
-                        {j.body}
-                      </p>
                     </motion.div>
                     <div className="hidden md:block" />
                   </div>

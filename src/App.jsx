@@ -11,6 +11,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Services from "./components/Services";
+import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
@@ -52,6 +53,7 @@ function App() {
         <Projects />
         <Experience />
         <Services />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

@@ -112,6 +112,33 @@ export const SERVICES = [
   },
 ];
 
+export const TESTIMONIALS = [
+  {
+    quote:
+      "Dibyendu turned a vague brief into a polished, production-ready React app faster than anyone on the team expected. The attention to interaction detail is rare.",
+    name: "Account Manager",
+    title: "Project Lead · SB Infowaves",
+    avatar: "",
+    rating: 5,
+  },
+  {
+    quote:
+      "Clean component architecture, smooth animations, and APIs that just work. He owns features end-to-end and sweats the small stuff.",
+    name: "Senior Engineer",
+    title: "Mentor · SB Infowaves",
+    avatar: "",
+    rating: 5,
+  },
+  {
+    quote:
+      "Reliable, communicative, and genuinely cares about the user experience. Delivered ahead of schedule and stayed to polish.",
+    name: "Product Stakeholder",
+    title: "Client · Freelance",
+    avatar: "",
+    rating: 5,
+  },
+];
+
 export const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -119,5 +146,6 @@ export const NAV_LINKS = [
   { label: "Projects", href: "#projects" },
   { label: "Journey", href: "#journey" },
   { label: "Services", href: "#services" },
+  { label: "Reviews", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];

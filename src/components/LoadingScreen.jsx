@@ -42,7 +42,7 @@ export default function LoadingScreen() {
                 animate={{ width: `${progress}%` }}
                 transition={{ ease: "easeOut", duration: 0.2 }}
                 className="h-full rounded-full"
-                style={{ background: "linear-gradient(90deg, #6366f1, #8b5cf6)" }}
+                style={{ background: "linear-gradient(90deg, #7c3aed, #4f46e5)" }}
               />
             </div>
             <p className="mt-4 text-xs uppercase tracking-[0.3em] text-faint">

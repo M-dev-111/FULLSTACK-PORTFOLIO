@@ -7,6 +7,7 @@ import {
   PROJECTS,
   JOURNEY,
   SERVICES,
+  TESTIMONIALS,
   NAV_LINKS,
 } from "./data";
 
@@ -19,6 +20,7 @@ export const FALLBACK_CONTENT = {
   PROJECTS,
   JOURNEY,
   SERVICES,
+  TESTIMONIALS,
   NAV_LINKS,
 };
 
@@ -43,6 +45,7 @@ export function ContentProvider({ children }) {
           PROJECTS: data.PROJECTS?.length ? data.PROJECTS : FALLBACK_CONTENT.PROJECTS,
           JOURNEY: data.JOURNEY?.length ? data.JOURNEY : FALLBACK_CONTENT.JOURNEY,
           SERVICES: data.SERVICES?.length ? data.SERVICES : FALLBACK_CONTENT.SERVICES,
+          TESTIMONIALS: data.TESTIMONIALS?.length ? data.TESTIMONIALS : FALLBACK_CONTENT.TESTIMONIALS,
           NAV_LINKS: data.NAV_LINKS?.length ? data.NAV_LINKS : FALLBACK_CONTENT.NAV_LINKS,
         });
         setSource("api");

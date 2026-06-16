@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import {
-  User, BarChart3, Wrench, Rocket, Compass, Sparkles, Link as LinkIcon,
+  User, BarChart3, Wrench, Rocket, Compass, Sparkles, Quote, Link as LinkIcon,
   Mail, Settings, Globe, LogOut, Menu, X,
 } from "lucide-react";
 import { useAdminAuth } from "./auth";
@@ -15,6 +15,7 @@ const NAV = [
   { to: "/admin/projects", label: "Projects", Icon: Rocket },
   { to: "/admin/journey", label: "Journey", Icon: Compass },
   { to: "/admin/services", label: "Services", Icon: Sparkles },
+  { to: "/admin/testimonials", label: "Testimonials", Icon: Quote },
   { to: "/admin/navlinks", label: "Nav Links", Icon: LinkIcon },
   { to: "/admin/messages", label: "Messages", Icon: Mail, badge: true },
 ];
@@ -49,7 +50,7 @@ export default function AdminLayout() {
           {label}
           {badge && unread > 0 && (
             <span className="ml-auto rounded-full px-2 py-0.5 text-[11px] text-white"
-              style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}>
+              style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}>
               {unread}
             </span>
           )}
@@ -62,7 +63,7 @@ export default function AdminLayout() {
     <div className="flex h-full flex-col p-4">
       <div className="flex items-center gap-2.5 px-2 pb-5 pt-1">
         <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl font-display text-sm font-bold text-white"
-          style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}>DN</span>
+          style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}>DN</span>
         <span className="font-display font-semibold text-strong">Admin</span>
       </div>
       {NavList}

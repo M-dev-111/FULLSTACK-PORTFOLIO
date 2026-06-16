@@ -62,8 +62,8 @@ export default function Navbar() {
             data-testid="logo-link"
           >
             <span
-              className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl text-white shadow-[0_8px_24px_-6px_rgba(99,102,241,0.7)]"
-              style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+              className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl text-white shadow-[0_8px_24px_-6px_rgba(124,58,237,0.7)]"
+              style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}
             >
               <span className="font-display text-sm font-bold">DN</span>
             </span>
@@ -93,8 +93,8 @@ export default function Navbar() {
                       {isActive && (
                         <motion.span
                           layoutId="nav-pill"
-                          className="absolute inset-0 -z-10 rounded-full shadow-[0_6px_22px_-6px_rgba(99,102,241,0.8)]"
-                          style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+                          className="absolute inset-0 -z-10 rounded-full shadow-[0_6px_22px_-6px_rgba(124,58,237,0.8)]"
+                          style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}
                           transition={{ type: "spring", stiffness: 350, damping: 30 }}
                         />
                       )}
@@ -115,8 +115,8 @@ export default function Navbar() {
                 e.preventDefault();
                 handleNavClick("#contact");
               }}
-              className="hidden items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition-shadow hover:shadow-[0_10px_40px_-8px_rgba(99,102,241,0.8)] lg:inline-flex"
-              style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+              className="sheen hidden items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition-shadow hover:shadow-[0_10px_40px_-8px_rgba(124,58,237,0.8)] lg:inline-flex"
+              style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}
               data-testid="nav-cta-contact"
             >
               <span className="inline-flex h-2 w-2 animate-pulse-soft rounded-full bg-emerald-300" />
@@ -202,7 +202,7 @@ export default function Navbar() {
                     handleNavClick("#contact");
                   }}
                   className="flex items-center justify-center gap-2 rounded-2xl px-4 py-4 text-sm font-medium text-white"
-                  style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+                  style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}
                 >
                   <span className="inline-flex h-2 w-2 animate-pulse-soft rounded-full bg-emerald-300" />
                   Hire Me

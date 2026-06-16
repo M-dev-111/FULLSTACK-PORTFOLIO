@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Loader2, Mail, MapPin, Send, Sparkles } from "lucide-react";
 import { toast, Toaster } from "sonner";
 import Reveal from "./Reveal";
+import { Aurora, SectionHeading } from "./ui";
 import { useContent } from "../lib/content";
 import { sendContactMessage } from "../lib/api";
 
@@ -94,25 +95,20 @@ export default function Contact() {
   return (
     <section id="contact" className="cv-auto relative py-24 md:py-32" data-testid="contact-section">
       <Toaster theme="dark" position="top-center" richColors />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,var(--accent-soft),transparent_55%)]" />
+      <Aurora className="opacity-60 [mask-image:radial-gradient(ellipse_at_bottom,black,transparent_70%)]" />
 
       <div className="mx-auto max-w-[1180px] px-6 md:px-10">
-        <Reveal>
-          <div className="text-center">
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">Get in touch</p>
-            <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-strong sm:text-5xl lg:text-6xl">
-              Let's build something <span className="text-gradient-accent">great together.</span>
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-muted">
-              Have a role, a project, or just a curious question? Drop a note — I usually reply
-              within a day, US or India time.
-            </p>
-          </div>
-        </Reveal>
+        <SectionHeading
+          eyebrow="Get in touch"
+          title="Let's build something"
+          accent="great together."
+          intro="Have a role, a project, or just a curious question? Drop a note — I usually reply within a day, US or India time."
+          align="center"
+        />
 
         <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-12">
           <Reveal delay={60} className="lg:col-span-5">
-            <div className="h-full rounded-[28px] card p-8">
+            <div className="h-full rounded-[28px] glass gradient-border p-8">
               <div className="flex items-center gap-2">
                 <span className="inline-flex h-2 w-2 animate-pulse-soft rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.7)]" />
                 <span className="text-sm text-strong">{PERSONAL.availability}</span>
@@ -125,7 +121,7 @@ export default function Contact() {
               </p>
 
               <ul className="mt-6 space-y-3">
-                <li className="flex items-center gap-3 rounded-2xl card-2 p-4">
+                <li className="flex items-center gap-3 rounded-2xl glass p-4">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--accent-soft)] text-accent">
                     <Mail className="h-4 w-4" />
                   </span>
@@ -140,7 +136,7 @@ export default function Contact() {
                     </a>
                   </div>
                 </li>
-                <li className="flex items-center gap-3 rounded-2xl card-2 p-4">
+                <li className="flex items-center gap-3 rounded-2xl glass p-4">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--accent-soft)] text-accent">
                     <MapPin className="h-4 w-4" />
                   </span>
@@ -164,7 +160,7 @@ export default function Contact() {
           <Reveal delay={120} className="lg:col-span-7">
             <form
               onSubmit={submit}
-              className="relative overflow-hidden rounded-[28px] card p-8"
+              className="relative overflow-hidden rounded-[28px] glass gradient-border p-8"
               data-testid="contact-form"
             >
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -208,7 +204,7 @@ export default function Contact() {
                   type="submit"
                   disabled={loading}
                   className="group inline-flex flex-none items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white disabled:opacity-70"
-                  style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)", boxShadow: "0 10px 30px -10px rgba(99,102,241,0.7)" }}
+                  style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)", boxShadow: "0 10px 30px -10px rgba(124,58,237,0.7)" }}
                   data-testid="contact-submit-button"
                 >
                   {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />}
@@ -230,7 +226,7 @@ function Field({ label, testid, ...rest }) {
       <input
         {...rest}
         data-testid={testid}
-        className="mt-2 w-full rounded-2xl card-2 px-4 py-3 text-sm text-strong placeholder:text-faint focus:border-accent focus:outline-none transition-colors"
+        className="mt-2 w-full rounded-2xl glass px-4 py-3 text-sm text-strong placeholder:text-faint focus:border-accent focus:outline-none transition-colors"
       />
     </label>
   );
@@ -247,7 +243,7 @@ function TextArea({ label, testid, action, ...rest }) {
         {...rest}
         rows={5}
         data-testid={testid}
-        className="mt-2 w-full resize-none rounded-2xl card-2 px-4 py-3 text-sm text-strong placeholder:text-faint focus:border-accent focus:outline-none transition-colors"
+        className="mt-2 w-full resize-none rounded-2xl glass px-4 py-3 text-sm text-strong placeholder:text-faint focus:border-accent focus:outline-none transition-colors"
       />
     </label>
   );

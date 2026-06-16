@@ -84,8 +84,8 @@ export default function Chatbot() {
         transition={{ delay: 1.2, type: "spring", stiffness: 260, damping: 18 }}
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.94 }}
-        className="fixed bottom-5 right-5 z-[80] inline-flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_12px_40px_-8px_rgba(99,102,241,0.8)] md:bottom-7 md:right-7"
-        style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+        className="fixed bottom-5 right-5 z-[80] inline-flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_12px_40px_-8px_rgba(124,58,237,0.8)] md:bottom-7 md:right-7"
+        style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}
       >
         {!open && (
           <span className="absolute -right-0.5 -top-0.5 inline-flex h-3.5 w-3.5 items-center justify-center">
@@ -120,7 +120,7 @@ export default function Chatbot() {
             {/* Header */}
             <div
               className="flex items-center gap-3 px-5 py-4 text-white"
-              style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+              style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}
             >
               <span className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/20 font-display text-sm font-bold">
                 DN
@@ -150,7 +150,7 @@ export default function Chatbot() {
                         ? "rounded-br-md text-white"
                         : "rounded-bl-md card-2 text-strong"
                     }`}
-                    style={m.from === "user" ? { background: "linear-gradient(135deg, #6366f1, #8b5cf6)" } : undefined}
+                    style={m.from === "user" ? { background: "linear-gradient(135deg, #7c3aed, #4f46e5)" } : undefined}
                   >
                     {m.text}
                   </div>
@@ -206,7 +206,7 @@ export default function Chatbot() {
                 aria-label="Send"
                 disabled={!input.trim()}
                 className="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full text-white transition-opacity disabled:opacity-40"
-                style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+                style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}
               >
                 <Send className="h-4 w-4" />
               </button>

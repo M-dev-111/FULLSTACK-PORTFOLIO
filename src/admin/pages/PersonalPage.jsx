@@ -54,7 +54,7 @@ export default function PersonalPage() {
           onClick={save}
           disabled={saving}
           className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white disabled:opacity-60"
-          style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+          style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}
         >
           {saving && <Loader2 className="h-4 w-4 animate-spin" />}
           Save changes

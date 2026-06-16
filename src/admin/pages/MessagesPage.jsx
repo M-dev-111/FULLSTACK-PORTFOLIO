@@ -42,7 +42,7 @@ export default function MessagesPage() {
             className={`rounded-full px-4 py-1.5 text-sm transition-colors ${
               filter === f.key ? "text-white" : "card-2 text-muted hover:text-strong"
             }`}
-            style={filter === f.key ? { background: "linear-gradient(135deg, #6366f1, #8b5cf6)" } : undefined}>
+            style={filter === f.key ? { background: "linear-gradient(135deg, #7c3aed, #4f46e5)" } : undefined}>
             {f.label}
           </button>
         ))}
@@ -60,7 +60,7 @@ export default function MessagesPage() {
                 <div className="min-w-0">
                   <div className="flex items-center gap-2 font-medium text-strong">
                     {m.name}
-                    {!m.read && <span className="rounded-full px-2 py-0.5 text-[11px] text-white" style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}>new</span>}
+                    {!m.read && <span className="rounded-full px-2 py-0.5 text-[11px] text-white" style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}>new</span>}
                   </div>
                   <a href={`mailto:${m.email}`} className="text-sm text-accent hover:underline">{m.email}</a>
                 </div>

@@ -34,6 +34,7 @@ function AdminRoutes() {
         <Route path="projects" element={<CollectionPage resource="projects" />} />
         <Route path="journey" element={<CollectionPage resource="journey" />} />
         <Route path="services" element={<CollectionPage resource="services" />} />
+        <Route path="testimonials" element={<CollectionPage resource="testimonials" />} />
         <Route path="navlinks" element={<CollectionPage resource="navlinks" />} />
         <Route path="messages" element={<MessagesPage />} />
         <Route path="settings" element={<SettingsPage />} />

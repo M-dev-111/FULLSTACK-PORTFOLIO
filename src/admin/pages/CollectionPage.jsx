@@ -59,7 +59,7 @@ export default function CollectionPage({ resource }) {
         action={
           <button onClick={() => setEditing("new")}
             className="inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white"
-            style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}>
+            style={{ background: "linear-gradient(135deg, #7c3aed, #4f46e5)" }}>
             <Plus className="h-4 w-4" /> New
           </button>
         }
